@@ -1,12 +1,12 @@
-function mapArrayToHashByKey(data, key) {
+function mapArrayToHashByKey(array, key) {
 	const enumField = `_${key}s`;
 	const map = {[enumField]: []};
 
-	if (!data) return map;
+	if (!array) return map;
 
 	console.log("key", key);
 
-	for (let item of data) {
+	for (let item of array) {
 		const newHash = item[key].toString();
 		map[newHash] = item;
 		map[enumField].push(newHash);

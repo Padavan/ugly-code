@@ -1,18 +1,24 @@
 function mapArrayToHashByKey(array, key) {
-	const enumField = `_${key}s`;
-	const map = {[enumField]: []};
+    array ??= []; // if array is null | undefined
+    if (!key) {   // if key is null | undefined
+        key = array;
+        array = [];
+    }
 
-	if (!array) return map;
+    const enumField = `_${key}s`;
+    const initialMap = {[enumField]: []};
 
-	console.log("key", key);
+    return array.reduce((acc, cur) => {
+        if (!cur[key]) {
+            return acc;
+        }
 
-	for (let item of array) {
-		const newHash = item[key].toString();
-		map[newHash] = item;
-		map[enumField].push(newHash);
-	}
+        const newHash = cur[key].toString();
+        acc[newHash] = cur;
+        acc[enumField].push(newHash);
 
-	return map;
-};
+        return acc;
+    }, initialMap);
+}
 
-export { mapArrayToHashByKey };
+export {mapArrayToHashByKey};

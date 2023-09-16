@@ -1,13 +1,13 @@
 {
-  "name": "beauty-code",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "start": "node index.js",
-    "test": "node --test"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "beauty-code",
+    "version": "1.0.0",
+    "description": "The project for SBR",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "test": "node --test --trace-warnings"
+    },
+    "author": "Pdvn",
+    "license": "WTFPL"
 }
